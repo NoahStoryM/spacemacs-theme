@@ -1,6 +1,6 @@
 ;;; spacemacs-common.el --- Color theme with a dark and light versions.
 
-;; Copyright (C) 2015-2018 Nasser Alshammari
+;; Copyright (C) 2015-2022 Nasser Alshammari
 
 ;; Author: Nasser Alshammari
 ;; URL: <https://github.com/nashamri/spacemacs-theme>
@@ -43,12 +43,12 @@
   :type 'boolean
   :group 'spacemacs-theme)
 
-(defcustom spacemacs-theme-comment-italic nil
+(defcustom spacemacs-theme-comment-italic t
   "Enable italics for comments and also disable background."
   :type 'boolean
   :group 'spacemacs-theme)
 
-(defcustom spacemacs-theme-keyword-italic nil
+(defcustom spacemacs-theme-keyword-italic t
   "Enable italics for keywords."
   :type 'boolean
   :group 'spacemacs-theme)
@@ -103,28 +103,30 @@ to 'auto, tags may not be properly aligned. "
         ;; generic
         (act1          (if (eq variant 'dark) (if (true-color-p) "#222226" "#121212") (if (true-color-p) "#e7e5eb" "#d7dfff")))
         (act2          (if (eq variant 'dark) (if (true-color-p) "#5d4d7a" "#444444") (if (true-color-p) "#d3d3e7" "#afafd7")))
-        (base          (if (eq variant 'dark) (if (true-color-p) "#b2b2b2" "#b2b2b2") (if (true-color-p) "#655370" "#5f5f87")))
+        (base          (if (eq variant 'dark) (if (true-color-p) "#bbc2cf" "#bbc2cf") (if (true-color-p) "#000000" "#000000")))
         (base-dim      (if (eq variant 'dark) (if (true-color-p) "#686868" "#585858") (if (true-color-p) "#a094a2" "#afafd7")))
-        (bg1           (if (eq variant 'dark) (if (true-color-p) "#292b2e" "#262626") (if (true-color-p) "#fbf8ef" "#ffffff")))
-        (bg2           (if (eq variant 'dark) (if (true-color-p) "#212026" "#1c1c1c") (if (true-color-p) "#efeae9" "#e4e4e4")))
+        (bg1           (if (eq variant 'dark) (if (true-color-p) "#282a36" "#29282e") (if (true-color-p) "#fdf7e3" "#ffffff")))
+        (bg2           (if (eq variant 'dark) (if (true-color-p) "#23212a" "#1c1c1c") (if (true-color-p) "#eeede8" "#e4e4e4")))
         (bg3           (if (eq variant 'dark) (if (true-color-p) "#100a14" "#121212") (if (true-color-p) "#e3dedd" "#d0d0d0")))
         (bg4           (if (eq variant 'dark) (if (true-color-p) "#0a0814" "#080808") (if (true-color-p) "#d2ceda" "#bcbcbc")))
+        (bg5           (if (eq variant 'dark) (if (true-color-p) "#1f1d26" "#585858") (if (true-color-p) "#e7e7fc" "#d7d7ff")))
+        (bg6           (if (eq variant 'dark) (if (true-color-p) "#34313e" "#585858") (if (true-color-p) "#ddeeff" "#d7d7ff")))
         (bg-alt        (if (eq variant 'dark) (if (true-color-p) "#42444a" "#353535") (if (true-color-p) "#efeae9" "#e4e4e4")))
         (border        (if (eq variant 'dark) (if (true-color-p) "#5d4d7a" "#111111") (if (true-color-p) "#b3b9be" "#b3b9be")))
         (cblk          (if (eq variant 'dark) (if (true-color-p) "#cbc1d5" "#b2b2b2") (if (true-color-p) "#655370" "#5f5f87")))
-        (cblk-bg       (if (eq variant 'dark) (if (true-color-p) "#2f2b33" "#262626") (if (true-color-p) "#e8e3f0" "#ffffff")))
+        (cblk-bg       (if (eq variant 'dark) (if (true-color-p) "#2f2b33" "#262626") (if (true-color-p) "#fbf8ef" "#ffffff")))
         (cblk-ln       (if (eq variant 'dark) (if (true-color-p) "#827591" "#af5faf") (if (true-color-p) "#9380b2" "#af5fdf")))
         (cblk-ln-bg    (if (eq variant 'dark) (if (true-color-p) "#373040" "#333333") (if (true-color-p) "#ddd8eb" "#dfdfff")))
         (cursor        (if (eq variant 'dark) (if (true-color-p) "#e3dedd" "#d0d0d0") (if (true-color-p) "#100a14" "#121212")))
         (const         (if (eq variant 'dark) (if (true-color-p) "#a45bad" "#d75fd7") (if (true-color-p) "#4e3163" "#8700af")))
-        (comment       (if (eq variant 'dark) (if (true-color-p) "#2aa1ae" "#008787") (if (true-color-p) "#2aa1ae" "#008787")))
-        (comment-light (if (eq variant 'dark) (if (true-color-p) "#2aa1ae" "#008787") (if (true-color-p) "#a49da5" "#008787")))
-        (comment-bg    (if (eq variant 'dark) (if (true-color-p) "#292e34" "#262626") (if (true-color-p) "#ecf3ec" "#ffffff")))
+        (comment       (if (eq variant 'dark) (if (true-color-p) "#2ca6b3" "#008787") (if (true-color-p) "#2aa1ae" "#008787")))
+        (comment-light (if (eq variant 'dark) (if (true-color-p) "#2ca6b3" "#008787") (if (true-color-p) "#a49da5" "#008787")))
+        (comment-bg    (if (eq variant 'dark) (if (true-color-p) "#262c36" "#262626") (if (true-color-p) "#fdf3dc" "#ffffff")))
         (comp          (if (eq variant 'dark) (if (true-color-p) "#c56ec3" "#d75fd7") (if (true-color-p) "#6c4173" "#8700af")))
         (err           (if (eq variant 'dark) (if (true-color-p) "#e0211d" "#e0211d") (if (true-color-p) "#e0211d" "#e0211d")))
-        (func          (if (eq variant 'dark) (if (true-color-p) "#bc6ec5" "#d75fd7") (if (true-color-p) "#6c3163" "#8700af")))
+        (func          (if (eq variant 'dark) (if (true-color-p) "#bc6ec5" "#d75fd7") (if (true-color-p) "#705091" "#8700af")))
         (head1         (if (eq variant 'dark) (if (true-color-p) "#4f97d7" "#268bd2") (if (true-color-p) "#3a81c3" "#268bd2")))
-        (head1-bg      (if (eq variant 'dark) (if (true-color-p) "#293239" "#262626") (if (true-color-p) "#edf1ed" "#ffffff")))
+        (head1-bg      (if (eq variant 'dark) (if (true-color-p) "#283948" "#262626") (if (true-color-p) "#edf1ed" "#ffffff")))
         (head2         (if (eq variant 'dark) (if (true-color-p) "#2d9574" "#2aa198") (if (true-color-p) "#2d9574" "#2aa198")))
         (head2-bg      (if (eq variant 'dark) (if (true-color-p) "#293235" "#262626") (if (true-color-p) "#edf2e9" "#ffffff")))
         (head3         (if (eq variant 'dark) (if (true-color-p) "#67b11d" "#67b11d") (if (true-color-p) "#67b11d" "#5faf00")))
@@ -133,6 +135,7 @@ to 'auto, tags may not be properly aligned. "
         (head4-bg      (if (eq variant 'dark) (if (true-color-p) "#32322c" "#262626") (if (true-color-p) "#f6f1e1" "#ffffff")))
         (highlight     (if (eq variant 'dark) (if (true-color-p) "#444155" "#444444") (if (true-color-p) "#d3d3e7" "#d7d7ff")))
         (highlight-dim (if (eq variant 'dark) (if (true-color-p) "#3b314d" "#444444") (if (true-color-p) "#e7e7fc" "#d7d7ff")))
+        (indentation   (if (eq variant 'dark) (if (true-color-p) "#444155" "#444444") (if (true-color-p) "#ecf3ec" "#d7d7ff")))
         (keyword       (if (eq variant 'dark) (if (true-color-p) "#4f97d7" "#268bd2") (if (true-color-p) "#3a81c3" "#268bd2")))
         (lnum          (if (eq variant 'dark) (if (true-color-p) "#44505c" "#444444") (if (true-color-p) "#a8a8bf" "#af87af")))
         (mat           (if (eq variant 'dark) (if (true-color-p) "#86dc2f" "#86dc2f") (if (true-color-p) "#ba2f59" "#af005f")))
@@ -157,11 +160,13 @@ to 'auto, tags may not be properly aligned. "
         (red-bg        (if (eq variant 'dark) (if (true-color-p) "#3c2a2c" "#262626") (if (true-color-p) "#faede4" "#ffffff")))
         (red-bg-s      (if (eq variant 'dark) (if (true-color-p) "#512e31" "#262626") (if (true-color-p) "#eed9d2" "#ffffff")))
         (blue          (if (eq variant 'dark) (if (true-color-p) "#4f97d7" "#268bd2") (if (true-color-p) "#3a81c3" "#268bd2")))
-        (blue-bg       (if (eq variant 'dark) (if (true-color-p) "#293239" "#262626") (if (true-color-p) "#edf1ed" "#d7d7ff")))
+        (blue-bg       (if (eq variant 'dark) (if (true-color-p) "#283948" "#262626") (if (true-color-p) "#edf1ed" "#d7d7ff")))
         (blue-bg-s     (if (eq variant 'dark) (if (true-color-p) "#2d4252" "#262626") (if (true-color-p) "#d1dcdf" "#d7d7ff")))
         (magenta       (if (eq variant 'dark) (if (true-color-p) "#a31db1" "#af00df") (if (true-color-p) "#a31db1" "#800080")))
         (yellow        (if (eq variant 'dark) (if (true-color-p) "#b1951d" "#875f00") (if (true-color-p) "#b1951d" "#875f00")))
-        (yellow-bg     (if (eq variant 'dark) (if (true-color-p) "#32322c" "#262626") (if (true-color-p) "#f6f1e1" "#ffffff"))))
+        (yellow-bg     (if (eq variant 'dark) (if (true-color-p) "#32322c" "#262626") (if (true-color-p) "#f6f1e1" "#ffffff")))
+        (black         (if (eq variant 'dark) (if (true-color-p) "#000000" "#000000") (if (true-color-p) "#000000" "#000000")))
+        (white         (if (eq variant 'dark) (if (true-color-p) "#ffffff" "#ffffff") (if (true-color-p) "#ffffff" "#ffffff"))))
 
     (cl-loop for (cvar . val) in spacemacs-theme-custom-colors
              do (set cvar val))
@@ -191,7 +196,7 @@ to 'auto, tags may not be properly aligned. "
      `(font-lock-variable-name-face ((,class (:foreground ,var))))
      `(font-lock-warning-face ((,class (:foreground ,war :background ,bg1))))
      `(fringe ((,class (:background ,bg1 :foreground ,base))))
-     `(header-line ((,class :background ,bg2)))
+     `(header-line ((,class :background ,bg4)))
      `(highlight ((,class (:foreground ,base :background ,highlight))))
      `(hl-line ((,class (:background ,bg2 :extend t))))
      `(isearch ((,class (:foreground ,bg1 :background ,mat))))
@@ -258,10 +263,8 @@ to 'auto, tags may not be properly aligned. "
      `(centaur-tabs-default ((,class (:background ,bg1 :foreground ,bg1))))
      `(centaur-tabs-selected ((,class (:background ,bg1 :foreground ,base :weight bold))))
      `(centaur-tabs-unselected ((,class (:background ,bg2 :foreground ,base-dim :weight light))))
-     `(centaur-tabs-selected-modified ((,class (:background ,bg1
-                  :foreground ,blue :weight bold))))
-     `(centaur-tabs-unselected-modified ((,class (:background ,bg2 :weight light
-                    :foreground ,blue))))
+     `(centaur-tabs-selected-modified ((,class (:background ,bg1 :foreground ,blue :weight bold))))
+     `(centaur-tabs-unselected-modified ((,class (:background ,bg2 :weight light :foreground ,blue))))
      `(centaur-tabs-active-bar-face ((,class (:background ,keyword))))
      `(centaur-tabs-modified-marker-selected ((,class (:inherit 'centaur-tabs-selected :foreground,keyword))))
      `(centaur-tabs-modified-marker-unselected ((,class (:inherit 'centaur-tabs-unselected :foreground,keyword))))
@@ -407,30 +410,30 @@ to 'auto, tags may not be properly aligned. "
      `(evil-ex-substitute-replacement ((,class (:background ,green-bg :foreground ,green))))
 
 ;;;;; evil-goggles
-      `(evil-goggles--pulse-face ((,class (:background ,yellow-bg :foreground ,yellow))))
-      `(evil-goggles-change-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-commentary-face ((,class (:background ,aqua-bg :foreground ,aqua))))
-      `(evil-goggles-delete-face ((,class (:background ,red-bg-s :foreground ,red))))
-      `(evil-goggles-fill-and-move-face ((,class (:background ,green-bg-s :foreground ,green))))
-      `(evil-goggles-indent-face ((,class (:background ,green-bg-s :foreground ,green))))
-      `(evil-goggles-join-face ((,class (:background ,green-bg-s :foreground ,green))))
-      `(evil-goggles-nerd-commenter-face ((,class (:background ,aqua-bg :foreground ,aqua))))
-      `(evil-goggles-paste-face ((,class (:background ,green-bg-s :foreground ,green))))
-      `(evil-goggles-record-macro-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-replace-with-register-face ((,class (:background ,yellow-bg :foreground ,yellow))))
-      `(evil-goggles-set-marker-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-shift-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-surround-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-yank-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-undo-redo-add-face ((,class (:background ,green-bg-s :foreground ,green))))
-      `(evil-goggles-undo-redo-change-face ((,class (:background ,blue-bg-s :foreground ,blue))))
-      `(evil-goggles-undo-redo-remove-face ((,class (:background ,red-bg-s :foreground ,red))))
+     `(evil-goggles--pulse-face ((,class (:background ,yellow-bg :foreground ,yellow))))
+     `(evil-goggles-change-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-commentary-face ((,class (:background ,aqua-bg :foreground ,aqua))))
+     `(evil-goggles-delete-face ((,class (:background ,red-bg-s :foreground ,red))))
+     `(evil-goggles-fill-and-move-face ((,class (:background ,green-bg-s :foreground ,green))))
+     `(evil-goggles-indent-face ((,class (:background ,green-bg-s :foreground ,green))))
+     `(evil-goggles-join-face ((,class (:background ,green-bg-s :foreground ,green))))
+     `(evil-goggles-nerd-commenter-face ((,class (:background ,aqua-bg :foreground ,aqua))))
+     `(evil-goggles-paste-face ((,class (:background ,green-bg-s :foreground ,green))))
+     `(evil-goggles-record-macro-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-replace-with-register-face ((,class (:background ,yellow-bg :foreground ,yellow))))
+     `(evil-goggles-set-marker-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-shift-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-surround-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-yank-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-undo-redo-add-face ((,class (:background ,green-bg-s :foreground ,green))))
+     `(evil-goggles-undo-redo-change-face ((,class (:background ,blue-bg-s :foreground ,blue))))
+     `(evil-goggles-undo-redo-remove-face ((,class (:background ,red-bg-s :foreground ,red))))
 
 ;;;;; evil-mc
-      `(evil-mc-cursor-bar-face ((,class (:foreground ,aqua))))
-      `(evil-mc-cursor-default-face ((,class (:background ,aqua :foreground ,bg4))))
-      `(evil-mc-cursor-hbar-face ((,class (:foreground ,aqua))))
-      `(evil-mc-region-face ((,class (:inherit highlight))))
+     `(evil-mc-cursor-bar-face ((,class (:foreground ,aqua))))
+     `(evil-mc-cursor-default-face ((,class (:background ,aqua :foreground ,bg4))))
+     `(evil-mc-cursor-hbar-face ((,class (:foreground ,aqua))))
+     `(evil-mc-region-face ((,class (:inherit highlight))))
 
 ;;;;; flycheck
      `(flycheck-error
@@ -624,7 +627,7 @@ to 'auto, tags may not be properly aligned. "
 
 ;;;;; line-numbers
      `(line-number ((,class (:foreground ,lnum :background ,bg2 :inherit default))))
-     `(line-number-current-line ((,class (:foreground ,base :background ,bg2 :inherit line-number))))
+     `(line-number-current-line ((,class (:foreground ,comp :background ,bg3 :inherit line-number))))
 
 ;;;;; linum-relative
      `(linum-relative-current-face ((,class (:foreground ,comp))))
@@ -897,15 +900,15 @@ to 'auto, tags may not be properly aligned. "
      `(swiper-match-face-4 ((,class (:foreground ,head3 :underline t))))
 
 ;;;;; tabbar
-     `(tabbar-button ((,class (:inherit tabbar-default ))))
+     `(tabbar-button ((,class (:inherit tabbar-default))))
      `(tabbar-button-highlight ((,class (:inherit tabbar-default))))
-     `(tabbar-default ((,class (:background ,bg1 :foreground ,head1 :height 0.9))))
+     `(tabbar-default ((,class (:background ,bg5 :foreground ,head1 :height 0.9))))
      `(tabbar-highlight ((,class (:underline t))))
-     `(tabbar-selected ((,class (:inherit tabbar-default :foreground ,func :weight bold))))
+     `(tabbar-selected ((,class (:inherit tabbar-default :background ,bg1 :weight bold))))
      `(tabbar-selected-modified ((,class (:inherit tabbar-default :foreground ,red :weight bold))))
-     `(tabbar-separator ((,class (:inherit tabbar-default))))
-     `(tabbar-unselected ((,class (:inherit tabbar-default :background ,bg1 :slant italic :weight light))))
-     `(tabbar-unselected-modified ((,class (:inherit tabbar-unselected :background ,bg1 :foreground ,red))))
+     `(tabbar-separator ((,class (:inherit black))))
+     `(tabbar-unselected ((,class (:inherit tabbar-default :forceground ,bg1 :background ,bg6 :slant italic :weight light))))
+     `(tabbar-unselected-modified ((,class (:inherit tabbar-unselected :background ,bg6 :foreground ,red))))
 
 ;;;;; term
      `(term ((,class (:foreground ,base :background ,bg1))))
@@ -1012,7 +1015,19 @@ to 'auto, tags may not be properly aligned. "
      `(undo-tree-visualizer-current-face ((,class :foreground ,keyword)))
      `(undo-tree-visualizer-default-face ((,class :foreground ,base)))
      `(undo-tree-visualizer-register-face ((,class :foreground ,comp)))
-     `(undo-tree-visualizer-unmodified-face ((,class :foreground ,var))))
+     `(undo-tree-visualizer-unmodified-face ((,class :foreground ,var)))
+
+
+;;;;;;; Custom
+;;;;; Racket
+     `(racket-reader-quoted-symbol-face ((,class (:inherit ,font-lock-string-face))))
+     `(racket-reader-syntax-quoted-symbol-face ((,class (:inherit ,font-lock-string-face))))
+
+;;;;; vline
+     `(vline ((,class (:background ,bg2))))
+     `(vline-visual ((,class (:background ,highlight))))
+
+     )
 
     (custom-theme-set-variables
      theme-name
@@ -1041,7 +1056,7 @@ to 'auto, tags may not be properly aligned. "
      `(org-fontify-todo-headline nil)
 
 ;;;;; pdf-tools
-    `(pdf-view-midnight-colors '(,base . ,bg1)))
+     `(pdf-view-midnight-colors '(,base . ,bg1)))
     ))
 
 
